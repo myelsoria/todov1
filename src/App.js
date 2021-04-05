@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
+import TodoListPage from './pages/TodoListPage'
 
 class App extends Component {
   state = {
@@ -14,8 +15,11 @@ class App extends Component {
       <div className='App'>
         <Router>
           <Switch>
-            <Route to='/'>
+            <Route exact path='/'>
               <LoginPage onUsernameChange={this.usernameHandler} />
+            </Route>
+            <Route path='/todolist'>
+              <TodoListPage username={this.state.username} />
             </Route>
           </Switch>
         </Router>

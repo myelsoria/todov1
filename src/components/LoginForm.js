@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { loginFormValidation } from '../validation/loginFormValidation'
+import { withRouter } from 'react-router-dom'
 
 export class LoginForm extends Component {
   state = {
@@ -10,6 +11,7 @@ export class LoginForm extends Component {
   validatePassword = (values) => {
     if (values.username === 'myaccount' && values.password === '123456') {
         this.props.onUsernameChange(values.username)
+        this.props.history.push('/todolist')
     } else this.setState({ error: 'Invalid Credentials' })
   }
 
@@ -75,4 +77,4 @@ export class LoginForm extends Component {
   }
 }
 
-export default LoginForm
+export default withRouter(LoginForm)
