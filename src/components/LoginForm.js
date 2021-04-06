@@ -22,8 +22,7 @@ export class LoginForm extends Component {
           this.validatePassword(values)
         }}
       >
-        {(formik) => {
-          const { errors, touched, isValid, dirty } = formik
+        {() => {
           return (
             <div className='container'>
               <Form>
