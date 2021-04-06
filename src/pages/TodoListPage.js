@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from '../components/Header'
+import TodoContainer from '../components/TodoContainer'
 import { withRouter } from 'react-router-dom'
 
 export class TodoListPage extends Component {
@@ -16,6 +17,7 @@ export class TodoListPage extends Component {
     return (
       <div className='container'>
         <Header username={username} onUsernameChange={onUsernameChange} />
+        <TodoContainer />
       </div>
     )
   }
