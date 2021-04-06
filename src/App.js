@@ -19,7 +19,10 @@ class App extends Component {
               <LoginPage onUsernameChange={this.usernameHandler} />
             </Route>
             <Route path='/todolist'>
-              <TodoListPage username={this.state.username} />
+              <TodoListPage
+                username={this.state.username}
+                onUsernameChange={this.usernameHandler}
+              />
             </Route>
           </Switch>
         </Router>
