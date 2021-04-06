@@ -6,11 +6,17 @@ export class TodoContainer extends Component {
     todoList: []
   }
 
+  deleteTodoHandler = id=> {
+    const filteredTodoList = this.state.todoList.filter(todo => todo.id !== id)
+    this.setState({todoList: (filteredTodoList)})
+  }
+
   render() {
     return (
       <>
         <Todos
           todoList={this.state.todoList}
+          onDeleteTodo={this.deleteTodoHandler}
         />
       </>
     )

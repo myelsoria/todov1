@@ -6,7 +6,7 @@ export class Todos extends Component {
     return (
       <ul className='list-group'>
         {this.props.todoList.map( todo => (
-            <Todo todo={todo} key={todo.id} />
+            <Todo todo={todo} key={todo.id} onDeleteTodo={this.props.onDeleteTodo}/>
         ))}
       </ul>
     )
